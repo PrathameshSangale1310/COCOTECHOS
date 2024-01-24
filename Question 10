@@ -1,0 +1,83 @@
+#include<iostream>
+using namespace std;
+
+class Delivery
+{
+ public:
+    void read();
+    void display();
+    //void partition();
+    int orders[2000];
+};
+
+void Delivery::read()
+{
+    int ord_no[1500];
+    int no_ord;
+    int i,j,k;
+    int pincode[100];
+    int no_city;
+    string city[100];
+    int weight[1000];
+    int wt=0;
+    
+    cout<<"Enter the number of orders:";
+    cin>>no_ord;
+    
+    cout<<"Enter the number of cities:";
+    cin>>no_city;
+    
+    for(i=1;i<=no_ord;i++)
+    {
+        ord_no[i]=i;
+        
+        }
+        for(j=1;j<=no_city;j++)
+        {
+            cout<<"Enter the city name: ";
+            cin>>city[j];
+            
+            cout<<"Enter the weight: ";
+            cin>>weight[j];
+            
+            for(k=1;k<=2;k++)
+            {
+                cout<<"Enter the pincode "<<k<< " for "<<city[j]<<":";
+                cin>>pincode[k];
+            }
+            // cout<<"Order no. "<<ord_no[i]<<" City name: "<<city[j]<<" Pincode: "<<pincode<<endl;
+        
+        for(i=1;i<=no_ord;i++)
+        {
+            cout<<"Order No: "<<ord_no[i];
+            // for(j=1;j<=no_city;j++)
+            // {
+            //     for(k=1;k<=2;k++)
+            //     {
+            //         cout<<"Order no. "<<ord_no[i]<<" City name: "<<city[j]<<" Weight: "<<weight[j]<<" Pincode: "<<pincode[k]<<endl;
+            //     }
+            // }
+        }
+        for(j=1;j<=no_city;j++)
+        {
+             for(k=1;k<=2;k++)
+                {
+                    cout<<"Order no. "<<ord_no[i]<<" City name: "<<city[j]<<" Weight: "<<weight[j]<<" Pincode: "<<pincode[k]<<endl;
+                }
+        }
+    }
+}
+
+void Delivery::display()
+{
+    
+}
+
+int main()
+{
+    Delivery d;
+    d.read();
+    d.display();
+    
+    return 0;
+}
